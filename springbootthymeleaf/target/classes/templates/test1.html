@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Thymeleaf内置对象测试</h1>
+    Date格式化:<span th:text="${#dates.format(date,'yyyy-MM-dd')}"></span><br><!--注意！！日期类转化时，需要指定格式-->
+    当前日期:<span th:text="${#dates.createToday()}"></span><br>
+    当前时间:<span th:text="${#dates.createNow()}"></span><br>
+    Calendar格式化:<span th:text="${#calendars.format(calendar,'yyyy-MM-dd')}"></span><br>
+    number百分比格式化:<span th:text="${#numbers.formatPercent(numbers,2,2)}"></span><br><!--后面的数字是小数点前后的位数-->
+    name是否为空:<span th:text="${#strings.isEmpty(string)}"></span><br>
+    name的长度:<span th:text="${#strings.length(string)}"></span><br>
+    name的拼接操作:<span th:text="${#strings.concat(string,'liangjiaqi')}"></span><br>
+    判断Boolean是否为true:<span th:text="${#bools.isTrue(boolean)}"></span><br>
+    arrays的长度:<span th:text="${#arrays.length(array)}"></span><br>
+    arrays是否包含 某一个值 :<span th:text="${#arrays.contains(array,'小灰灰')}"></span><br>
+    List是否为空:<span th:text="${#lists.isEmpty(list2)}"></span><br>
+    List长度:<span th:text="${#lists.size(list2)}"></span><br>
+    Set是否为空:<span th:text="${#sets.isEmpty(set)}"></span><br>
+    Set的长度:<span th:text="${#sets.size(set)}"></span><br>
+    Map是否为空:<span th:text="${#maps.isEmpty(map)}"></span><br>
+    Map的长度:<span th:text="${#maps.size(map)}"></span>
+
+</body>
+</html>

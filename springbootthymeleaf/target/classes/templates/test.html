@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Thymeleaf标签测试</h1>
+
+<!-- if 判断部分-->
+
+    <!--<p th:if="${score>=90}">优秀</p>
+    <p th:if="${score<90}">良好</p>-->
+
+<!-- unless 判断部分-->
+
+    <!--<p th:unless="${score>=90}">优秀</p>
+    <p th:unless="${score<90}">良好</p>&lt;!&ndash;unless标签，当满足成绩<90时，输出内容&ndash;&gt;-->
+
+<!-- switch，case 判断部分-->
+
+    <!--<div th:switch="${studentId}">
+        <p th:case="1">梁小灰</p>
+        <p th:case="2">杨杨杨</p>
+        <p th:case="3">刘66</p>
+    </div>-->
+
+<!-- action部分,使用方法1  如果 action 的值直接写在 HTML 中，则需要使⽤ @{}，如果是从后台传来的数据，则使⽤${}。-->
+
+    <form th:action="@{/hello/login}" method="post">
+        <input type="submit" value="提交">
+    </form>
+
+<!-- action部分,使用方法2  将url封装到Model对象里然后提交到test.html页面，之后在test.html页面中解析，效果是一样的(下面的警告可以忽略)-->
+
+    <!--<form th:action="${url}" method="post">
+        <input type="submit" value="提交">
+    </form>-->
+
+<!-- each 部分  遍历集合元素-->
+    <!--<table>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+        </tr>
+        <tr th:each="user:${list}">&lt;!&ndash;这里的意思是 将list中的元素取出来，并赋值给user&ndash;&gt;
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+        </tr>
+    </table>-->
+
+<!-- value 部分 给value标签赋值-->
+    <!--<input type="text" th:value="${value}">-->
+
+<!--图片资源 src 部分-->
+    <!--<img th:src="${src}">-->
+
+<!--超链接 href 部分-->
+    <!--<a th:href="${href}">百度一下，你就知道</a>-->
+
+<!--下拉框 select 选择框部分-->
+    <!--<select>
+        <option
+                th:each="user:${list1}"
+                th:value="${user.id}"
+                th:text="${user.name}"
+                th:selected="${user.id == id}"
+        ></option>
+    </select>-->
+
+<!-- servlet部分 Thymeleaf支持直接访问Servlet Web原生资源，HttpServletRequest、HttpServletResponse、servletSession、ServletContext-->
+    <!--<p th:text="${#request.getAttribute('value')}"></p>&lt;!&ndash;在取Servlet的这些原生资源的时候，要注意使用的是#，且后面的attribute括号内是单引号&ndash;&gt;
+    <p th:text="${#request.getSession().getAttribute('value')}"></p>
+    <p th:text="${#request.getServletContext().getAttribute('value')}"></p>
+    <p th:text="${#response}"></p>-->
+
+<!-- servlet2部分 可以实现一部分的简化-->
+    <!--<p th:text="${name}"></p>&lt;!&ndash;模型数据其实就是讲数据封装进了request，然后在html页面直接通过$符号就可以取出来&ndash;&gt;
+    <p th:text="${#request.getAttribute('name')}"></p>
+    <p th:text="${#session.getAttribute('name')}"></p>
+    <p th:text="${session.name}"></p>&lt;!&ndash;也可以直接通过session对象直接拿出属性&ndash;&gt;-->
+
+</body>
+</html>

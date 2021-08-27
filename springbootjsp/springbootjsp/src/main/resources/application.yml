@@ -1,0 +1,5 @@
+spring:   #配置视图解析器
+  mvc:
+    view:
+      prefix:  /
+      suffix:  .jsp
