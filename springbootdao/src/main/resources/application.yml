@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: yang123456
+  jpa:
+    show-sql: true    #控制台打印sql语句
+    properties:
+      hibernate:
+        format_sql: true    #格式化规范sql语句
+mybatis:
+  mapper-locations: classpath:/mapping/*.xml  #指向mybatis的xml文件位置
+  type-aliases-package: com.yang.entity #指定实体类路径，这样可以简化后面xml文件对user类的书写

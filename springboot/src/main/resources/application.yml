@@ -1,0 +1,4 @@
+#server:
+#  port: 8181   #注意port和8181之间有空格，可以多加空格但是不能少空格，包括port前面的空格
+#  servlet:
+#      context-path: /springboot      #在这里同级的标签（server），就不需要重新写一个server，直接在下面写就行了

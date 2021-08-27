@@ -1,0 +1,8 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  security:   #也可以自定义用户名和密码
+    user:
+      name: yang
+      password: 123456

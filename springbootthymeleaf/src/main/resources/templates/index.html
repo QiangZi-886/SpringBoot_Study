@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--注意，这里如果想要拿出后台传过来的数据，不能使用EL表达式，因为这里是html，所以需要引入Thymeleaf标签，且一定需要写在这里，格式也必须是这样，否则就会失败-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>INDEX页面</h1>
+    <p th:text="${mess}">Hello word!</p><!--使用类似于EL表达式的写法取出数据，但是注意，它并不是EL表达式-->
+</body>
+</html>

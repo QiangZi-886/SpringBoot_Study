@@ -1,0 +1,9 @@
+spring:  #thymeleaf 支持原生HTML文件，实现前后端分离的交互方式。但是需要首先配置它的解析器，否则handler到时无法对其完成解析
+  thymeleaf:                         #一般prefix会单独放在resources文件夹下的templates文件夹当中。classpath指的就是资源文件resources下
+    prefix: classpath:/templates/     #设置模板路径
+    suffix: .html                    #模板后缀
+    servlet:
+      content-type: text/html         #设置 Content-type
+    encoding: UTF-8                   #编码方式
+    mode: HTML5                       #校验 H5 格式
+    cache: false                      #关闭缓存，在开发过程中可以立即看到页面修改的结果
